@@ -1,70 +1,188 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christian Rodrigues</title>
+    <title>Christian Rodrigues | Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* CSS Básico (adicione mais no seu index.css) */
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #2b2d42;
+            --gray: #adb5bd;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
         }
-        #geral {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .card {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            padding: 2.5rem;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
         }
-        #foto img {
-            width: 150px;
+
+        .profile {
+            flex: 0 0 180px;
+        }
+
+        .profile-img {
+            width: 100%;
             border-radius: 50%;
-            margin-bottom: 20px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border: 5px solid var(--light);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
-        .social img {
-            width: 32px;
-            margin: 0 10px;
+
+        .profile-img:hover {
+            transform: scale(1.03);
         }
+
+        .info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(67, 97, 238, 0.2);
+        }
+
+        .portfolio-link:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(67, 97, 238, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .social-icon img {
+            width: 60%;
+            height: 60%;
+        }
+
         footer {
+            margin-top: 2rem;
+            color: var(--gray);
+            font-size: 0.9rem;
             text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="geral">
-        <div id="foto">
-            <img src="./img/christian.png" alt="Foto de Christian">
+    <div class="card">
+        <div class="profile">
+            <img src="./img/christian.png" alt="Christian Rodrigues" class="profile-img">
         </div>
-        <div id="info">
+        
+        <div class="info">
             <h1>Christian Rodrigues</h1>
-            <h2>
-                xdqchris@icloud.com<br>
-                <a href="imagem.html" target="_blank">Meu Portfólio</a> <!-- Link mais descritivo -->
-            </h2>
-        </div>
-        <div id="social">
-            <a href="https://www.linkedin.com/in/christian-rodrigues-8a470991/" target="_blank" title="LinkedIn">
-                <img src="./img/linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.instagram.com/xdq_chris/" target="_blank" title="Instagram">
-                <img src="./img/instagram.png" alt="Instagram">
-            </a>
-            <a href="https://www.facebook.com/christian.arruda.14" target="_blank" title="Facebook">
-                <img src="./img/facebook.png" alt="Facebook">
-            </a>
+            <p class="contact">xdqchris@icloud.com</p>
+            <a href="imagem.html" class="portfolio-link">Ver Meu Portfólio</a>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/christian-rodrigues-8a470991" class="social-icon" aria-label="LinkedIn">
+                    <img src="./img/linkedin.png" alt="">
+                </a>
+                <a href="https://instagram.com/xdq_chris" class="social-icon" aria-label="Instagram">
+                    <img src="./img/instagram.png" alt="">
+                </a>
+                <a href="https://facebook.com/christian.arruda.14" class="social-icon" aria-label="Facebook">
+                    <img src="./img/facebook.png" alt="">
+                </a>
+            </div>
         </div>
     </div>
+    
     <footer>
-        <p>Christian © 2023</p>
+        <p>&copy; <span id="year"></span> Christian Rodrigues. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
